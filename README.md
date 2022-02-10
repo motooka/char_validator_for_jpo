@@ -1,4 +1,4 @@
-# char_validator_for_jpo
+# 文字チェッカー for 特許庁電子出願
 与えられた文章に、特許庁に電子出願する文書で使用できない文字が含まれていないか判定するツールです。
 Webブラウザで [https://motooka.github.io/char_validator_for_jpo/](https://motooka.github.io/char_validator_for_jpo/) にアクセスすることで利用可能です。
 

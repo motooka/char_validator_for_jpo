@@ -2,21 +2,73 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>文字チェック</title>
+    <title>文字チェッカー for 特許庁電子出願</title>
     <script>const exports = {}</script>
     <script src="./app.js"></script>
 </head>
 <body>
-<h1>文字チェック</h1>
-<textarea id="src"></textarea>
-<h2>チェック結果</h2>
-<div id="resultOK">✅ 利用できない文字は検出されませんでした 👍</div>
-<div id="resultError">
-    ❌ 以下の、利用できない文字が検出されました 🙅‍♀️
-    <div></div>
-</div>
+<header>
+    <h1>文字チェッカー for 特許庁電子出願</h1>
+    <p>
+        与えられた文章に、特許庁に電子出願する文書で使用できない文字が含まれていないか判定するツールです。詳細な仕様は<a href="https://www.jpo.go.jp/system/process/shutugan/pcinfo/make/doc_rules.html">特許庁のページ</a>をご覧下さい。
+    </p>
+</header>
+<main>
+    <textarea id="src" placeholder="ここに文章を貼り付け" rows="12"></textarea>
+    <h2>チェック結果</h2>
+    <div id="resultOK">✅ 利用できない文字は検出されませんでした 👍</div>
+    <div id="resultError">
+        ❌ 利用できない文字が検出されました 🙅‍♀️
+        <div></div>
+    </div>
+
+    <h2>このツールについて</h2>
+    <ul>
+        <li>ソースコード等 : <a href="https://github.com/motooka/char_validator_for_jpo/" target="_blank">こちら</a></li>
+        <li>このツールを利用した結果として何か損害が発生したとしても、作者はその責を負いません。詳細は<a href="https://github.com/motooka/char_validator_for_jpo/blob/main/LICENSE" target="_blank">ライセンス（英語）</a>を参照して下さい。</li>
+        <li>もしもバグを見つけたら（例：ダメな文字を検出できなかったり、大丈夫な文字がダメと言われたり）、以下のいずれかの方法で作者にご連絡下さい。
+            <ul>
+                <li><a href="https://github.com/motooka/char_validator_for_jpo/issues" target="_blank">GitHub上でIssueを起票</a> ※要・GitHubアカウント</li>
+                <li><a href="https://twitter.com/t_motooka" target="_blank">Twitter上の作者に連絡</a> ※要・Twitterアカウント </li>
+            </ul>
+        </li>
+        <li>入力された文章が流出することが有り得ないように細心の注意を払っておりますが、例えば以下の場合においては流出する懸念はあります。
+            <ul>
+                <li>TypeScriptやWebpackにマルウェアが混入すること（これらのツールは世界中で広く使われているものであるので、もしもこのような事態が発生すれば重大なニュースとして報じられることでしょう）</li>
+                <li>お使いのWebブラウザに、不正なプラグイン等がインストールされていること</li>
+                <li>お使いのPCや作者のPCが、ウイルス等による攻撃を受けること</li>
+                <li><a href="https://github.com/motooka" target="_blank">作者のGitHubアカウント</a>が乗っ取られるか、第三者が操作可能な状態になること</li>
+                <li>作者の気が狂うこと</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>サポートするブラウザについて</h2>
+    <ul>
+        <li>Internet Explorer 等の古いブラウザでは動作しません。</li>
+        <li>動作確認は、ビルド時点でのFirefoxおよびChromeで実施しています。</li>
+        <li>ツールの性質から考えて、スマートフォン等のブラウザをサポートする意義は一切無いと思われるので、バグ報告があっても対応することはありません。</li>
+    </ul>
+</main>
+
+<footer>
+    <p>Copyright (c) 2022 <a href="https://github.com/motooka" target="_blank">Tadahisa MOTO-OKA</a></p>
+</footer>
 </body>
 <style>
+    body {
+        background-color: #dddddd;
+    }
+    header, main, footer {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    textarea {
+        width: 100%;
+        min-height: 6em;
+    }
+    h2 {
+        margin: 3em 0 0 0;
+    }
     #resultOK {
         display: none;
     }
@@ -28,6 +80,37 @@
         background-color: #eeeeee;
         padding: 0.2em;
         margin: 0.2em;
+        line-height: 2em;
+    }
+    footer {
+        margin-top: 3em;
+    }
+    footer > p {
+        text-align: center;
+        font-size: 80%;
+        color: #808080;
+    }
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+        textarea {
+            background-color: #202020;
+            color: #eeeeee;
+        }
+        a {
+            color: #a0a0ff;
+        }
+        a:visited {
+            color: #ffa0ff;
+        }
+        #resultError code {
+            background-color: #808080;
+        }
+        footer > p {
+            color: #a0a0a0;
+        }
     }
 </style>
 </html>

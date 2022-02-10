@@ -1,0 +1,31 @@
+{
+  "name": "char_validator_for_jpo",
+  "version": "1.0.0",
+  "description": "与えられた文章に、特許庁に電子出願する文書で使用できない文字が含まれていないか判定するツール。",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm dist/*; rm tmp/*",
+    "build": "npm run clean; cp index.html dist/; npx tsc --project tsconfig_for_char_list_builder.json; node tmp/char_list_builder.js; npx tsc; webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motooka/char_validator_for_jpo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/motooka/char_validator_for_jpo/issues"
+  },
+  "homepage": "https://github.com/motooka/char_validator_for_jpo#readme",
+  "devDependencies": {
+    "@types/encoding-japanese": "^1.0.18",
+    "@types/node": "^17.0.16",
+    "encoding-japanese": "^1.0.30",
+    "http-server": "^14.1.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

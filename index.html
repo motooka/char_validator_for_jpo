@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>文字チェック</title>
+    <script>const exports = {}</script>
+    <script src="./app.js"></script>
+</head>
+<body>
+<h1>文字チェック</h1>
+<textarea id="src"></textarea>
+<h2>チェック結果</h2>
+<div id="resultOK">✅ 利用できない文字は検出されませんでした 👍</div>
+<div id="resultError">
+    ❌ 以下の、利用できない文字が検出されました 🙅‍♀️
+    <div></div>
+</div>
+</body>
+<style>
+    #resultOK {
+        display: none;
+    }
+    #resultError {
+        display: none;
+    }
+    #resultError code {
+        font-size: 140%;
+        background-color: #eeeeee;
+        padding: 0.2em;
+        margin: 0.2em;
+    }
+</style>
+</html>

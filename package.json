@@ -4,8 +4,8 @@
   "description": "与えられた文章に、特許庁に電子出願する文書で使用できない文字が含まれていないか判定するツール。",
   "main": "index.js",
   "scripts": {
-    "clean": "rm dist/*; rm tmp/*",
-    "build": "npm run clean; cp index.html dist/; npx tsc --project tsconfig_for_char_list_builder.json; node tmp/char_list_builder.js; npx tsc; webpack --config webpack.config.js",
+    "clean": "rm docs/*; rm tmp/*",
+    "build": "npm run clean; cp index.html docs/; npx tsc --project tsconfig_for_char_list_builder.json; node tmp/char_list_builder.js; npx tsc; webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -26,14 +26,14 @@ Webブラウザで [https://motooka.github.io/char_validator_for_jpo/](https://m
 - `npm install` で必要なものをインストールして下さい。
 
 ## 開発
-- `npm run build` で、ビルドしたファイルたちが `dist` ディレクトリに置かれます（正常に動けば）
-- `npx http-server ./dist` で、 `dist` ディレクトリの中身をHTTPサーバから配信できます。
+- `npm run build` で、ビルドしたファイルたちが `docs` ディレクトリに置かれます（正常に動けば）
+- `npx http-server ./docs` で、 `docs` ディレクトリの中身をHTTPサーバから配信できます。
   - http://127.0.0.1:8080/ でアクセス可能です。
   - ポート番号等の設定を変えたい場合は [http-server](https://github.com/http-party/http-server) のヘルプをご参照下さい。
   - Ctrl-C で終了できます。
 
 ### 開発時の注意点
-- `dist` ディレクトリの中身はgit管理下です。これは [GitHub Pages](https://pages.github.com/) で手軽に公開するための、怠け者の判断によるものです。
+- `docs` ディレクトリの中身はgit管理下です。これは [GitHub Pages](https://pages.github.com/) で手軽に公開するための、怠け者の判断によるものです。
 - `src/zenkaku.ts` は、git管理下 **ではありません** 。このファイルは `src/char_list_builder.ts` の実行結果として生成されたファイルです。
 
 ## ライセンス

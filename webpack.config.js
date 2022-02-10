@@ -15,7 +15,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         filename: 'app.js',
     },
     devtool: 'inline-source-map',

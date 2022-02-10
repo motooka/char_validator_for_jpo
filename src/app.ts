@@ -27,6 +27,10 @@ function parse(str: string) {
         if(0x20<=code && code<=0x7e) {
             continue;
         }
+        if([0x0a, 0x0d, 0x09].includes(code)) {
+            // LF, CR, tab
+            continue;
+        }
         if(!zenkakuMap[char]) {
             errors.push(char);
         }

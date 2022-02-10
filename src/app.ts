@@ -31,6 +31,10 @@ function parse(str: string) {
             // LF, CR, tab
             continue;
         }
+        if([8722, 12316].includes(code)) {
+            // Macにおける全角マイナスや全角チルダ（Windowsとはマッピングが異なる。Windowsのマッピングは encoding.js でサポートされている）
+            continue;
+        }
         if(!zenkakuMap[char]) {
             errors.push(char);
         }
